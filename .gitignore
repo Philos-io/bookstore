@@ -1,0 +1,7 @@
+api/
+.tmp/
+dist/
+node_modules/
+vendors/
+LICENSE
+todo.txt
