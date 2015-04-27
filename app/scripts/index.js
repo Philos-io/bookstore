@@ -72,7 +72,7 @@
 
 	var bookstore = angular.module('bookstore', ['ngRoute']);
 
-	bookstore	
+	bookstore
 		.controller('MainController', function($scope){
 			$scope.books = getBooks();
 		});
@@ -89,8 +89,6 @@
 					templateUrl: 'templates/addBook.html',
 					controller: 'MainController'
 				});
-
-			console.log('running config');
 		});
-		
+
 })();

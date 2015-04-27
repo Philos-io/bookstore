@@ -1,4 +1,5 @@
 <div class="row">
+  <input type="search" ng-model="searchTerm" class="validate" placeholder="search books">
   <div class="col s12 m3 animated fadeInUpSmall" ng-repeat="book in books | filter:searchTerm">
     <div class="card small">
       <div class="card-image waves-effect waves-block waves-light">
@@ -15,4 +16,3 @@
     </div>
   </div>
 </div>
-
