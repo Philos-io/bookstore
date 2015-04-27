@@ -85,7 +85,7 @@
 					controller: 'MainController'
 				})
 				$routeProvider
-				.when('/addBooks', {
+				.when('/addBook', {
 					templateUrl: 'templates/addBook.html',
 					controller: 'MainController'
 				});
