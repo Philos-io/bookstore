@@ -12,7 +12,56 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css">
     <link rel="stylesheet" href="styles/app.css">
   </head>
-  <body class="grey lighten-5">
+  <body class="grey lighten-5" data-ng-app="bookstore">
+
+    <nav class="teal darken-3" ng-controller="NavController">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo" ng-bind="title"></a>
+        <form class="right col">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="mdi-action-search prefix"></i>
+              <a class="btn-floating btn-large waves-effect waves-light" href="/#/addBook"><i class="mdi-content-add"></i></a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </nav>
+
+    <div class="row container" ng-controller="BookController">
+      <!-- <input type="search" placeholder="search books" class="validate"> -->
+      <div class="col s12 m3 animated fadeInUpSmall" ng-repeat="book in books">
+        <div class="card small">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" ng-src="{{book.cover}}" alt="{{book.title}}">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4" ng-bind="book.title"><i class="mdi-navigation-more-vert right"></i></span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4" ng-bind="book.title"><i class="mdi-navigation-close right"></i></span>
+            <p ng-bind="book.description"></p>
+            <p>
+              <a href="#take-me-to-the-details-of-this-book">See more details</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer grey lighten-5">
+      <div class="container">
+        <div class="row">
+          <div class="col l4 offset-l10 s12">
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <a class="btn-floating btn-large waves-effect waves-light" href="/#/add-new-customer"><i class="mdi-social-person"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- build:js scripts/main.min.js -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
