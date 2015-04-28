@@ -3,13 +3,13 @@
 
 		module
 			.controller('NavController', function($scope){
-					$scope.title = "Book Store";
+				$scope.title = "Book Store";
 			})
-			.controller('BookController', function($scope){
+			.controller('BookController', function(){
 				$scope.books = getBooks();
 			});
 
-})(angular.module('bookstore', []));
+})(angular.module('bookstore'));
 
 function getBooks(){
 		return [
