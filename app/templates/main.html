@@ -1,16 +1,19 @@
-<div class="row">
-  <div class="col s12 m3 animated fadeInUpSmall">
+<div class="row container">
+  <input type="search" placeholder="search books" class="validate" ng-model="title">
+  <div class="col s12 m3 animated fadeInUpSmall" ng-repeat="book in books | filter:title">
     <div class="card small">
       <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src="images/javascript.jpg" alt="something should go here">
+        <img class="activator" ng-src="{{book.cover}}" alt="{{book.title}}">
       </div>
       <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">JavaScript is cool but wait, there's something cooler<i class="mdi-navigation-more-vert right"></i></span>
+        <span class="card-title activator grey-text text-darken-4" ng-bind="book.title"><i class="mdi-navigation-more-vert right"></i></span>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">JavaScript is cool but wait, there's something cooler<i class="mdi-navigation-close right"></i></span>
-        <p>Do you really want a description here? How can explain that JS is cool but ES6 is cooler</p>
-        <p><a href="#">See more details</a></p>
+        <span class="card-title grey-text text-darken-4" ng-bind="book.title">{{book.title}}<i class="mdi-navigation-close right"></i></span>
+        <p ng-bind="book.description">{{book.description}}</p>
+        <p>
+          <a href="#/books/{{book.bookID}}">See more details</a>
+        </p>
       </div>
     </div>
   </div>

@@ -1,80 +1,57 @@
 (function(module){
 	'use strict';
 
-		module
-			.controller('NavController', function($scope){
-				$scope.title = "Book Store";
-			})
-			.controller('BookController', function(){
-				$scope.books = getBooks();
-			});
+	// TODO: Refactor this application in modules
 
-})(angular.module('bookstore'));
-
-function getBooks(){
-		return [
-		    {
-		      bookID: 09809,
-		      author: 'Davy Mitchel',
-		      title: 'Functional JavaScript',
-		      description: 'Functional programming in JavaScript',
-		      price: 29.99,
-		      category: 'Programming language',
-		      cover: 'images/javascript.jpg'
-		    },
-		    {
-		      bookID: 09100,
-		      author: 'Max Mitchel',
-		      title: 'AngularJS: Up and Running',
-		      description: 'Enhanced Productivity with Structured Web Apps',
-		      price: 19.99,
-		      category: 'Web Frameworks',
-		      cover: 'images/angularjs.jpg'
-		    },
-		    {
-		      bookID: 09353,
-		      author: 'Jesse Cravens, Thomas Q Brady',
-		      title: 'Building Web Apps with Ember.js',
-		      description: "Build ambitious JavaScript App",
-		      price: 9.99,
-		      category: 'Web Frameworks',
-		      cover: 'images/iot.jpg'
-		    },
-		    {
-		      bookID: 09353,
-		      author: 'Jesse Cravens, Thomas Q Brady',
-		      title: 'Building Web Apps with Ember.js',
-		      description: "Build ambitious JavaScript App",
-		      price: 9.99,
-		      category: 'Web Frameworks',
-		      cover: 'images/datavis.jpg'
-		    },
-		    {
-		      bookID: 09353,
-		      author: 'Jesse Cravens, Thomas Q Brady',
-		      title: 'ES6: JavaScript Next',
-		      description: "This book will cover ES6 entirely and will show you how to use ES6 today.",
-		      price: 9.99,
-		      category: 'Web Frameworks',
-		      cover: 'images/es6.jpg'
-		    },
-		    {
-		      bookID: 09353,
-		      author: 'Jesse Cravens, Thomas Q Brady',
-		      title: 'Ionic Framework: Building hybrid app',
-		      description: "Build Hybrid apps using Angular, Ionic and deliver fast.",
-		      price: 9.99,
-		      category: 'Web Frameworks',
-		      cover: 'images/ionic.jpg'
-		    },
-		    {
-		      bookID: 09546,
-		      author: 'Backstop Media, Rick Waldron',
-		      title: 'Make: JavaScript Robotics',
-		      description: 'Building NodeBots with Raspberry Pi, Arduino, and BeagleBone',
-		      price: 9.99,
-		      category: 'Robotic & Programming',
-		      cover: 'images/robot.jpg'
-		    }
-		  ];
+	function NavController($scope){
+		// TODO: Refactor this to use Constant Service instead of boring string...
+		$scope.title = 'Book Store';
 	}
+
+	// TODO: Use the $log service to log activities of your application
+	function BookController($scope, bookfactory){
+		bookfactory.getAll().then(function(response){
+			$scope.books = response;
+		})
+		.catch(function(err){
+			// TODO: Log information using the $log service
+			console.log(err);
+		});
+	}
+
+	function configuration($routeProvider){
+		$routeProvider
+			.when('/', {
+				controller:'BookController',
+				templateUrl: 'templates/main.html'
+			})
+			.when('/books', {
+				controller:'BookController',
+				templateUrl: 'templates/main.html'
+			})
+			.when('/books/add', {
+				controller:'BookController',
+				templateUrl: 'template/addBook.html'
+			})
+			.when('/books/:bookID', {
+				controller: 'BookDetailsController', // TODO: bookdetailscontroller
+				templateUrl: 'template/bookDetails.html'
+			})
+			.otherwise('/');
+	}
+
+
+	NavController.$inject  = ['$scope'];
+
+	BookController.$inject = ['$scope', 'bookfactory'];
+
+	configuration.$inject = ['$routeProvider'];
+
+	module
+		.controller('NavController', NavController)
+
+		.controller('BookController', BookController)
+
+		.config(configuration);
+
+})(angular.module('Bookstore', ['ngRoute']));

@@ -5,63 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Book Store</title>
+    <title>{{BookStrore}}</title>
 
     <!-- Page styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css">
     <link rel="stylesheet" href="styles/app.css">
   </head>
-  <body class="grey lighten-5" gn-app="Bookstore">
+  <body class="grey lighten-5" ng-app="Bookstore">
+    
+    <!-- TODO: Use directive instead of ng-include -->
+    <div ng-include="templates/header.html"></div>
 
-    <nav class="teal darken-3">
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo" ng-bind="title"></a>
-        <form class="right col">
-          <div class="row">
-            <div class="input-field col s12">
-              <i class="mdi-action-search prefix"></i>
-              <a class="btn-floating btn-large waves-effect waves-light" href="/#/addBook"><i class="mdi-content-add"></i></a>
-            </div>
-          </div>
-        </form>
-      </div>
-    </nav>
-
-    <div class="row container">
-      <!-- <input type="search" placeholder="search books" class="validate"> -->
-      <div class="col s12 m3 animated fadeInUpSmall" ng-repeat="book in books">
-        <div class="card small">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="{{book.cover}}" alt="{{book.title}}">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4" ng-bind="book.title"><i class="mdi-navigation-more-vert right"></i></span>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4" ng-bind="book.title">{{book.title}}<i class="mdi-navigation-close right"></i></span>
-            <p ng-bind="book.description">{{book.description}}</p>
-            <p>
-              <a href="#take-me-to-the-details-of-this-book">See more details</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer class="page-footer grey lighten-5">
-      <div class="container">
-        <div class="row">
-          <div class="col l4 offset-l10 s12">
-            <ul class="right hide-on-med-and-down">
-              <li>
-                <a class="btn-floating btn-large waves-effect waves-light" href="/#/add-new-customer"><i class="mdi-social-person"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <!-- TODO: The content of the application is supposed to enter in and out here -->
+    
+    <!-- TODO: Use directive instead of ng-include -->
+    <!-- <div ng-include="'templates/footer.html'" ng-controller="CommonController"></div> -->
 
     <!-- build:js scripts/main.min.js -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -69,6 +28,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
     <script src="scripts/index.js"></script>
+    <script src="scripts/book.factory.js"></script>
     <!-- endbuild -->
   </body>
 </html>

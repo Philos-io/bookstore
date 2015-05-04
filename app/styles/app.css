@@ -4,6 +4,15 @@ body {
 	flex-direction: column;
 }	
 
+.card .card-content .card-title {
+  line-height: 12px;
+    font-size: 18px;
+}
+
+#bookDetails img{
+  height: 380px;
+}
+
 main {
 	flex: 1 0 auto;
 }
