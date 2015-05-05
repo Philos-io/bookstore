@@ -46,6 +46,7 @@
 
     return {
       getAll: getAllFromServer,
+      getBook: getBook,
       getCovers: covers
     };
   }
