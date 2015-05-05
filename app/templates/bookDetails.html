@@ -3,30 +3,30 @@
   
   <div class="col s5 m5">
     <div class="card-image waves-effect waves-block waves-light">
-      <img ng-src="{{book.cover}}" alt="{{book.title}}">
+      <img data-ng-src="{{book.cover}}" alt="{{book.title}}">
     </div>
   </div>
   <div class="col s7 m7">
     <form class="row">
       <div >
         <div class="input-field col s12">
-          <input disabled type="text" ng-model="book.title">
+          <input disabled type="text" data-ng-model="book.title">
           <label for="first_name">Title</label>
         </div>
         <div class="input-field col s12">
-          <input disabled type="text" ng-model="book.author">
+          <input disabled type="text" data-ng-model="book.author">
           <label for="last_name">Author</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input disabled  type="number" ng-model="book.price">
+          <input disabled  type="number" data-ng-model="book.price">
           <label for="first_name">Price</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea disabled id="textarea1" class="materialize-textarea" ng-model="book.description"></textarea>
+          <textarea disabled id="textarea1" class="materialize-textarea" data-ng-model="book.description"></textarea>
           <label for="textarea1">Description</label>
         </div>
       </div>

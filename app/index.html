@@ -14,16 +14,8 @@
   </head>
   <body class="grey lighten-5" >
     
-    <!-- TODO: Use directive instead of data-ng-include -->
-    <div data-ng-include="'templates/header.html'"></div>
-
-    <!-- TODO: The content of the application is supposed to enter in and out here -->
-        
-
-    <data-ng-view/>
-
-    <!-- TODO: Use directive instead of data-ng-include -->
-    <div data-ng-include="'templates/footer.html'"></div>
+    <!-- TODO: Wow, this apps is broken -->
+    <book-store></book-store>
 
     <!-- build:js scripts/main.min.js -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -44,7 +36,9 @@
     <script src="modules/common/core.js"></script>
     <script src="modules/common/common.controller.js"></script>
     <script src="modules/common/nav.controller.js"></script>
-
+    <script src="modules/common/common.factory.js"></script>
+    <script src="modules/common/bs.header.directive.js"></script>
+    <script src="modules/common/bs.footer.directive.js"></script>
     <!-- endbuild -->
   </body>
 </html>
