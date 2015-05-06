@@ -1,11 +1,11 @@
 (function(module){
 	'use strict';
 
-	function NavController($scope){
-		$scope.title = 'Book Store';
+	function NavController(Config){
+		this.title = Config.AppTitle
 	}
 
-	NavController.$inject  = ['$scope'];
+	NavController.$inject  = ['Config'];
 
 	module.controller('NavController', NavController);
 

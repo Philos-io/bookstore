@@ -1,10 +1,10 @@
 (function(module){
   'strict';
 
-  function bookfactory($q, $http){
+  function bookfactory($q, $http, Config){
 
     function getAllFromServer(){
-      return $http.get('http://localhost:9000/api/books');
+      return $http.get(Config.BooksUrl, {cache: true});
     }
 
     function covers(){
@@ -39,20 +39,19 @@
     }
 
     function getBook(bookId){
-      var url = 'http://localhost:9000/api/books/' + bookId;   
-      return $http.get(url);
+      var url = Config.BooksUrl + '/' + bookId;   
+      return $http.get(url, {cache: true});
     }
-
-
-    return {
-      getAll: getAllFromServer,
-      getBook: getBook,
-      getCovers: covers
-    };
+    
+    this.getAll = getAllFromServer;
+    this.getBook = getBook;
+    this.getCovers = covers;
   }
 
-  bookfactory.$inject = ['$q', '$http'];
+  bookfactory.$inject = ['$q', '$http', 'Config'];
 
-  module.factory('bookfactory', bookfactory);
+  // module.factory('bookfactory', bookfactory);
+
+  module.service('bookfactory', bookfactory);
 
 })(angular.module('Bookstore'));

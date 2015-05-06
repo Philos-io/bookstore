@@ -1,6 +1,6 @@
 <div class="row container">
   <input type="search" placeholder="search books" class="validate" ng-model="title">
-  <div class="col s12 m3 animated fadeInUpSmall" ng-repeat="book in books | filter:title">
-    <bs-book></bs-book>
+  <div class="col s12 m3 animated fadeInUpSmall" ng-repeat="book in vm.books | filter:title">
+    <bs-book data-model="book"></bs-book>
   </div>
 </div>

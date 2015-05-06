@@ -1,17 +1,21 @@
 (function(module){
 	'use strict';
 
-	function BookController($scope, bookfactory){
+	function BookController(bookfactory){
 
+		var vm = this;
+		
 		bookfactory.getAll().then(function(response){
-			$scope.books = response.data;
+			vm.books = response.data;
 		})
 		.catch(function(err){
 			console.log(err);
 		});
+
+		vm.covers = bookfactory.getCovers();
 	}
 
-	BookController.$inject = ['$scope', 'bookfactory'];
+	BookController.$inject = ['bookfactory'];
 
 	module.controller('BookController', BookController)
 

@@ -1,16 +1,15 @@
 (function(module){
 	'use strict';
 
-	function CommonController($scope, commonFactory){
-		$scope.app = 'Book Store';
+	function CommonController(commonFactory, Config){
+		this.app = Config.AppTitle;
 
-		$scope.watchers = commonFactory.getWatchers().length;
+		this.watchers = commonFactory.getWatchers().length;
 		window.watchers = commonFactory.getWatchers;
 	}
 	
-	CommonController.$inject = ['$scope', 'commonFactory'];
+	CommonController.$inject = ['commonFactory', 'Config'];
 	
-	module.controller('CommonController', CommonController)
-
+	module.controller('CommonController', CommonController);
 
 })(angular.module('core'));

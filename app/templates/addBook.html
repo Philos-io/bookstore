@@ -1,36 +1,38 @@
-<span>TODO: Add this feature to the app (add a new book)</span>
-
-<!-- <div id="bookDetails" class="container row">
+<div id="bookDetails" class="container row">
   <div class="col s5 m5">
     <div class="card-image waves-effect waves-block waves-light">
       <label>Select Cover</label>
-      <select class="browser-default">
-        <option disabled selected>Book Covers</option>
+      <select class="browser-default" ng-repeat="cover in vm.covers">
+        <option ng-if="$first" disabled selected>Book Covers</option>
+        <option value="{{cover}}">{{cover}}</option>
       </select>
+      <pre>
+        {{vm | json}}
+      </pre>
       <img src="img" alt="title">
     </div>
   </div>
   <div class="col s7 m7">
-    <form class="row">
+    <form class="row" ng-submit="vm.addBook()" name="addBookForm">
       <div >
         <div class="input-field col s12">
-          <input type="text">
+          <input type="text" ng-model="vm.book.title">
           <label for="first_name">Title</label>
         </div>
         <div class="input-field col s12">
-          <input  type="text">
+          <input  type="text" ng-model="vm.book.author">
           <label for="last_name">Author</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input   type="number">
+          <input   type="number" ng-model="vm.book.price">
           <label for="first_name">Price</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea  id="textarea1" class="materialize-textarea"></textarea>
+          <textarea  id="textarea1" class="materialize-textarea" ng-model="vm.book.description"></textarea>
           <label for="textarea1">Description</label>
         </div>
       </div>
@@ -39,4 +41,4 @@
       </button>
     </div>
   </form>
-</div> -->
+</div>

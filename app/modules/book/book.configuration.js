@@ -5,18 +5,22 @@
 		$routeProvider
 			.when('/', {
 				controller:'BookController',
+				controllerAs: 'vm',
 				templateUrl: 'templates/main.html'
 			})
 			.when('/books', {
 				controller:'BookController',
+				controllerAs: 'vm',
 				templateUrl: 'templates/main.html'
 			})
 			.when('/books/add', {
 				controller:'BookController',
+				controllerAs: 'vm',
 				templateUrl: 'templates/addBook.html'
 			})
 			.when('/books/:bookID', {
 				controller: 'BookDetailsController', // TODO: bookdetailscontroller
+				controllerAs: 'book',
 				templateUrl: 'templates/bookDetails.html'
 			})
 			.otherwise('/');

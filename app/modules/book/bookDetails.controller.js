@@ -1,19 +1,19 @@
 (function(module){
 	'use strict';
 
-	function BookDetailsController($scope, $route, bookfactory){
+	function BookDetailsController($route, bookfactory){
 
-		var bookID = $route.current.params.bookID;
+		var bookID = $route.current.params.bookID, vm = this;
 
 		bookfactory.getBook(bookID).then(function(response){
-			$scope.book = response.data;
+			vm.book = response.data;
 		})
 		.catch(function(err){
 			console.log(err);
 		});
 	}
 
-	BookDetailsController.$inject = ['$scope', '$route', 'bookfactory'];
+	BookDetailsController.$inject = ['$route', 'bookfactory'];
 
 	module.controller('BookDetailsController', BookDetailsController)
 
