@@ -1,15 +1,11 @@
-<div id="bookDetails" class="container row">
+<div id="bookDetails" class="container row animated fadeInUpSmall">
   <div class="col s5 m5">
     <div class="card-image waves-effect waves-block waves-light">
       <label>Select Cover</label>
-      <select class="browser-default" ng-repeat="cover in vm.covers">
-        <option ng-if="$first" disabled selected>Book Covers</option>
-        <option value="{{cover}}">{{cover}}</option>
+      <select class="browser-default" ng-options="cover as cover for cover in vm.covers" ng-model="vm.book.selectedCover">
+        <option value="cover"></option>
       </select>
-      <pre>
-        {{vm | json}}
-      </pre>
-      <img src="img" alt="title">
+      <img ng-src="{{vm.book.selectedCover}}">
     </div>
   </div>
   <div class="col s7 m7">

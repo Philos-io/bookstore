@@ -20,7 +20,7 @@
 			})
 			.when('/books/:bookID', {
 				controller: 'BookDetailsController', // TODO: bookdetailscontroller
-				controllerAs: 'book',
+				controllerAs: 'vm',
 				templateUrl: 'templates/bookDetails.html'
 			})
 			.otherwise('/');

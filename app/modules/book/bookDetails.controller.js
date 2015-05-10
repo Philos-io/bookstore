@@ -1,19 +1,37 @@
 (function(module){
 	'use strict';
 
-	function BookDetailsController($route, bookfactory){
+	function BookDetailsController($route, $log, bookfactory){
 
-		var bookID = $route.current.params.bookID, vm = this;
+		var vm = this;
 
-		bookfactory.getBook(bookID).then(function(response){
-			vm.book = response.data;
-		})
-		.catch(function(err){
-			console.log(err);
-		});
+		function init(){
+			var bookID = $route.current.params.bookID;
+
+			bookfactory.getBook(bookID).then(getBook);
+
+			bookfactory.getCategories().then(getCategories);
+
+
+			function getBook(response){
+				vm.book = response.data;
+			}
+
+			function getCategories(categories){
+				$log.info(categories);
+				vm.categories = categories;
+			}
+
+			function error(){
+				$log.error('something weird happened');
+			}
+		}
+
+		// Init the book details controller
+		init();
 	}
 
-	BookDetailsController.$inject = ['$route', 'bookfactory'];
+	BookDetailsController.$inject = ['$route', '$log', 'bookfactory'];
 
 	module.controller('BookDetailsController', BookDetailsController)
 
