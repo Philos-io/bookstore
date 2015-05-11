@@ -22,8 +22,7 @@
 				controller: 'BookDetailsController', // TODO: bookdetailscontroller
 				controllerAs: 'vm',
 				templateUrl: 'templates/bookDetails.html'
-			})
-			.otherwise('/');
+			});
 	}	
 
 	configuration.$inject = ['$routeProvider'];

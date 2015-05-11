@@ -5,7 +5,7 @@
 		return {
 			restrict: 'E',
 			scope: {
-				model: '='
+				model: '=args'
 			},
 			templateUrl: 'templates/book.html'
 		};

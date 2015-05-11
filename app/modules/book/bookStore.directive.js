@@ -3,7 +3,7 @@
 
 	function bookStore(){
 		return {
-			restrict: 'E',
+			restrict: 'C',
 			templateUrl: 'templates/bookstore.html'
 		};
 	}
