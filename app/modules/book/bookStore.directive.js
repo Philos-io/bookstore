@@ -3,8 +3,11 @@
 
 	function bookStore(){
 		return {
-			restrict: 'C',
-			templateUrl: 'templates/bookstore.html'
+			restrict: 'E',
+			templateUrl: 'templates/bookstore.html',
+			link: function(scope, element, attrs){
+				
+			}
 		};
 	}
 
