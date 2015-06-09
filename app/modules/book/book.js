@@ -1,5 +1,5 @@
 (function(){
 	'use strict';
 
-	angular.module('Bookstore', ['ngRoute', 'ngAnimate', 'toaster', 'core'])
+	angular.module('Bookstore', ['ngRoute', 'ngAnimate', 'toaster', 'core', 'ui-router'])
 })();
