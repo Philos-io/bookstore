@@ -1,12 +1,29 @@
 // Book model: Constructor
-var Book = function(options){
-	this.author = options.author;
-	this.topic = options.topic;
-};
 
-debugger;
 
-var book = new Book({author: 'Mehdi Mitchel', topic: 'Design for developers'});
-var book2 = new Book({author: 'Max Mitchel', topic: 'Product management done well'});
+(function(){
+	
+	var author = "";
 
-console.info(book === book2);
+	// DEFINITION
+	var Book = {
+		this.author : options.author,
+		this.topic : options.topic
+	};
+
+	function BookService(){
+		return Book;
+	}
+
+	// INJECTION
+	BookService.$inject = [];
+
+
+	
+	angular.module('bookstore').factory('BookService', BookService);
+
+
+})();
+
+
+
