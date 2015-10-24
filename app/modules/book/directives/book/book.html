@@ -1,0 +1,15 @@
+<div class="card small">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator" ng-src="{{model.cover}}" alt="{{model.title}}">
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4" ng-bind="model.title"><i class="mdi-navigation-more-vert right"></i></span>
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4" ng-bind="model.title">{{model.title}}<i class="mdi-navigation-close right"></i></span>
+    <p ng-bind="model.description">{{model.description}}</p>
+    <p>
+      <a href="#/books/{{model.bookID}}">See more details</a>
+    </p>
+  </div>
+</div>
