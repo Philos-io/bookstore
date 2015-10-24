@@ -1,11 +1,10 @@
 <!doctype html>
-<html lang="en" data-ng-app="Bookstore" data-ng-controller="CommonController">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title ng-bind="app"></title>
 
     <!-- Page styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
@@ -13,36 +12,8 @@
     <link rel="stylesheet" href="styles/app.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.9/toaster.min.css" rel="stylesheet" />
   </head>
-  <body class="grey lighten-5" ng-app="Bookstore">
-
+  <body class="grey lighten-5">
     <book-store></book-store>
-
-    <!-- build:js scripts/main.min.js -->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
-    <script src="https://code.angularjs.org/1.3.14/angular-animate.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.9/toaster.min.js"></script>
-    <!-- dependencies -->
-
-    <!-- book -->
-    <script src="modules/book/book.js"></script>
-    <script src="modules/book/book.controller.js"></script>
-    <script src="modules/book/bookDetails.controller.js"></script>
-    <script src="modules/book/book.configuration.js"></script>
-    <script src="modules/book/book.factory.js"></script>
-    <script src="modules/book/bookStore.directive.js"></script>
-    <script src="modules/book/bs.book.directive.js"></script>
-
-    <!-- core -->
-    <script src="modules/common/core.js"></script>
-    <script src="modules/common/common.controller.js"></script>
-    <script src="modules/common/nav.controller.js"></script>
-    <script src="modules/common/common.factory.js"></script>
-    <script src="modules/common/bs.header.directive.js"></script>
-    <script src="modules/common/bs.footer.directive.js"></script>
-    <script src="modules/common/config.provider.js"></script>
-    <!-- endbuild -->
+    <script src="bundle.js"></script>
   </body>
 </html>
