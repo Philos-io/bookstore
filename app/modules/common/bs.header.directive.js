@@ -9,8 +9,7 @@
 	}
 
 	bsHeader.$inject = [];
-	
-	module
-		.directive('bsHeader', bsHeader);
+
+	module.directive('bsHeader', bsHeader);
 
 })(angular.module('core'));
