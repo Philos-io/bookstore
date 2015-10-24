@@ -9,8 +9,7 @@
 	}
 
 	bsFooter.$inject = [];
-	
-	module
-		.directive('bsFooter', bsFooter);
+
+	module.directive('bsFooter', bsFooter);
 
 })(angular.module('core'));

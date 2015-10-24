@@ -5,15 +5,11 @@
 		return {
 			restrict: 'E',
 			templateUrl: 'templates/bookstore.html',
-			link: function(scope, element, attrs){
-				
-			}
 		};
 	}
 
 	bookStore.$inject = [];
-	
-	module
-		.directive('bookStore', bookStore);
+
+	module.directive('bookStore', bookStore);
 
 })(angular.module('Bookstore'));
