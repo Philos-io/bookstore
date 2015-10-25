@@ -6,7 +6,7 @@ export default function bsBook(){
     scope: {
       model: '='
     },
-    templateUrl: 'templates/book.html'
+    template: bookTemplate
   };
 }
 

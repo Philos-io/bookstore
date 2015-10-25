@@ -1,17 +1,17 @@
 export default class BookController{
-  constructor($location, $log, $timeout, bookfactory, toaster){
-    bookfactory.getAll()
+  constructor($location, $log, $timeout, bookFactory, toastr){
+    bookFactory.getAll()
     .then((response)=>{
       this.books = response.data;
     }, () => {
       $log.error('something weird happened');
     });
 
-    this.covers = bookfactory.getCovers();
+    this.covers = bookFactory.getCovers();
   }
 
   pop(args){
-    toaster.pop(args.type, '', args.message);
+    toastr.pop(args.type, '', args.message);
   }
 
   addBook(){
@@ -23,7 +23,7 @@ export default class BookController{
       description: vm.book.description
     };
 
-    bookfactory.addBook(book)
+    bookFactory.addBook(book)
     .then((response) => {
       this.books = response.data;
 
@@ -41,6 +41,6 @@ export default class BookController{
   };
 }
 
-BookController.$inject = ['$location', '$log', '$timeout', 'bookfactory', 'toaster'];
+BookController.$inject = ['$location', '$log', '$timeout', 'bookFactory', 'toastr'];
 
 

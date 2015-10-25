@@ -16,4 +16,4 @@ module('book', ['ngRoute', 'toastr'])
   .controller('BookDetailsController', BookDetailsController)
   .directive('bsBook', bookDirective)
   .directive('bsBookStore', bookStoreDirective)
-  .factory('BookFactory', BookFactory);
+  .factory('bookFactory', BookFactory);
