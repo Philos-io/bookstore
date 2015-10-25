@@ -4,8 +4,6 @@ import angular, {bootstrap, module} from 'angular';
 import './modules/core';
 import './modules/book';
 
-
-
 module('bookstore', ['core', 'book']);
 
-bootstrap(document.body, 'bookstore');
+bootstrap(document.body, ['bookstore']);
