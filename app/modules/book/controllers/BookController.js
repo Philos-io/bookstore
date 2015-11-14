@@ -36,7 +36,7 @@ export default class BookController{
 
       $timeout(() => {
         $location.path('/books');
-      }, 3000);
+      }, 1000);
     });
   };
 }

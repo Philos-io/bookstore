@@ -1,6 +1,4 @@
-export default class NavController {
-  constructor(Config){
-		this.title = Config.AppTitle
-  }
+export default function NavController(Config){
+  this.title = Config.AppTitle
 }
 NavController.$inject  = ['Config'];

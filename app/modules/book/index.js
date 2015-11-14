@@ -1,19 +1,15 @@
 import angular , {module} from 'angular';
-import 'angular-route';
 import 'angular-toastr';
-
 
 import BookController from './controllers/BookController';
 import BookDetailsController from './controllers/BookDetailsController';
-import routes from './config/routes.js';
-import bookDirective from './directives/book';
-import bookStoreDirective from './directives/bookStore';
+import bookComponent from './directives/book';
+import booksComponent from './directives/books';
 import BookFactory from './services/BookService';
 
-module('book', ['ngRoute', 'toastr'])
-  .config(routes)
+module('book', ['toastr'])
   .controller('BookController', BookController)
   .controller('BookDetailsController', BookDetailsController)
-  .directive('bsBook', bookDirective)
-  .directive('bsBookStore', bookStoreDirective)
+  .directive('books', booksComponent)
+  .directive('bsBook', bookComponent)
   .factory('bookFactory', BookFactory);
