@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = {
   // devtool: 'source-map',
-  entry: './angular1/index',
+  entry: './app/index',
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, 'dist')
@@ -15,6 +15,6 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: 'angular1'
+    contentBase: 'app'
   }
 };
