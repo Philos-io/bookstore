@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "start-gulp": "./node_modules/gulp/bin/gulp.js serve",
+    "start": " ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "test": "./node_modules/protractor/bin/protractor config.js",
+    "debug": "./node_modules/protractor/bin/protractor debug config.js"
+  },
   "devDependencies": {
     "apache-server-configs": "^2.7.1",
     "babel": "^6.1.18",
@@ -13,6 +19,7 @@
     "gulp-changed": "^1.0.0",
     "gulp-csso": "^1.0.0",
     "gulp-flatten": "0.0.4",
+    "gulp-help": "^1.6.1",
     "gulp-if": "^1.2.1",
     "gulp-imagemin": "^2.0.0",
     "gulp-jshint": "^1.6.3",
@@ -27,30 +34,30 @@
     "gulp-useref": "^1.0.1",
     "jshint-stylish": "^1.0.0",
     "opn": "^1.0.0",
+    "protractor": "^3.0.0",
     "psi": "^1.0.4",
     "raw-loader": "^0.5.1",
     "require-dir": "^0.1.0",
     "run-sequence": "^1.0.1",
-    "webpack": "^1.12.2"
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "private": true,
-  "scripts": {
-    "start-gulp": "gulp serve",
-    "start": "webpack-dev-server",
-    "test": "protractor config.js",
-    "debug": "protractor debug config.js"
-  },
   "dependencies": {
-    "angular": "^1.4.7",
+    "angular": "^1.2.28",
     "angular-route": "^1.4.7",
     "angular-router": "0.0.2",
     "angular-toastr": "^1.5.0",
     "body-parser": "^1.13.3",
+    "bootstrap": "^3.3.5",
     "cors": "^2.5.3",
     "express": "^4.12.3",
-    "koa": "^0.19.1"
+    "font-awesome": "^4.4.0",
+    "install": "^0.3.0",
+    "koa": "^0.19.1",
+    "npm": "^3.4.0"
   }
 }
