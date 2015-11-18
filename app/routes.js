@@ -3,7 +3,7 @@ import 'angular-route';
 
 export default function routes($routeProvider, $compileProvider){
 
-  $compileProvider.debugInfoEnabled(false);
+  $compileProvider.debugInfoEnabled && $compileProvider.debugInfoEnabled(false);
 
   $routeProvider
       .when('/', {
@@ -22,7 +22,6 @@ export default function routes($routeProvider, $compileProvider){
         controllerAs: 'vm',
         templateUrl: 'templates/bookDetails.html'
       });
-
 }
 
 routes.$inject = ['$routeProvider', '$compileProvider'];
