@@ -3,7 +3,7 @@ import 'angular-route';
 
 export default function routes($routeProvider, $compileProvider){
 
-  $compileProvider.debugInfoEnabled && $compileProvider.debugInfoEnabled(false);
+  // $compileProvider.debugInfoEnabled && $compileProvider.debugInfoEnabled(false);
 
   $routeProvider
       .when('/', {

@@ -47,7 +47,7 @@
   },
   "private": true,
   "dependencies": {
-    "angular": "^1.2.28",
+    "angular": "^1.4.7",
     "angular-route": "^1.4.7",
     "angular-router": "0.0.2",
     "angular-toastr": "^1.5.0",

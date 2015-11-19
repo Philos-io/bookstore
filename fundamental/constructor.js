@@ -17,8 +17,6 @@
 
 	// INJECTION
 	BookService.$inject = [];
-
-
 	
 	angular.module('bookstore').factory('BookService', BookService);
 
