@@ -1,11 +1,10 @@
 import angular, {bootstrap, module} from 'angular';
-import 'angular-route';
 
 // Import core module
 import './modules/core';
 import './modules/book';
-import './routes';
+import './modules/routes';
 
-module('bookstore', ['bookstore.routes', 'core', 'book'])
+module('bookstore', ['bookstore.routes', 'bookstore.core', 'bookstore.book'])
 
 bootstrap(document.body, ['bookstore']);

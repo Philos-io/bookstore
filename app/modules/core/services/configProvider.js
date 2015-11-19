@@ -1,4 +1,4 @@
-const Config = {
+export const Config = {
   AppTitle: 'Book Store',
   BooksUrl: 'http://localhost:9000/api/books',
   AddBookUrl: 'http://localhost:9000/api/books/add',
@@ -7,4 +7,4 @@ const Config = {
   }
 };
 
-export default Config;
+// export default Config;
