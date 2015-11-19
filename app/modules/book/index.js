@@ -1,4 +1,4 @@
-import angular , {module} from 'angular';
+import {module} from 'angular';
 import 'angular-toastr';
 
 import BookController from './controllers/BookController';
@@ -7,7 +7,7 @@ import bookComponent from './directives/book';
 import booksComponent from './directives/books';
 import BookFactory from './services/BookService';
 
-module('book', ['toastr'])
+module('bookstore.book', ['toastr'])
   .controller('BookController', BookController)
   .controller('BookDetailsController', BookDetailsController)
   .directive('books', booksComponent)
